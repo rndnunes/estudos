@@ -63,16 +63,15 @@
     <script src="js/app/models/Negociacao.js"></script>
     <script>
 
-       /* var n1 = new Negociacao();
-            n1.quantidade = 10;
-            n1.valor = 200.50;
-        console.log(n1);*/
+        let hoje = new Date();
+        
+        let n1 = new Negociacao(hoje, 5, 700);
+        
+        console.log(n1.data);
 
-        var n1 = new Negociacao(new Date, 5, 700); 
-        console.log(n1.getQuantidade());
-        console.log(n1.getData());
-        console.log(n1.getValor());
-        console.log(n1.getVolume());
+        n1.data.setDate(3);
+
+        console.log(n1.data);
         
     </script>
     
