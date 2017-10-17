@@ -7,7 +7,7 @@ class Negociacao {
     /*[Nota curso]: Para definirmos atributos de instância de uma classe, precisamos adicionar em sua definição um constructor. É através do construtor que adicionamos na variável implícita this as propriedades que desejamos que toda instância da classe tenha.*/
     constructor (data, quantidade, valor) {
         
-        this._data = new Date(this.data.value.split('-'));
+        this._data = new Date(data.getTime());
         this._quantidade = quantidade;
         this._valor = valor;
         /* [Nota my]: Na nossa aplicação, ao chamar a propiedade utilizando
