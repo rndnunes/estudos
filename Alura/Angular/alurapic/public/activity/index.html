@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="alurapicActivity">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Colocando em prática, atividades</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../css/efeitos.css" rel="stylesheet" />
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/lib/angular-animate.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/FotosController.js"></script>
+    <script src="js/directives/minhas-diretivas.js"></script>
+</head>
+<body ng-controller="FotosControllerActivity">
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="text-center">Alurapic - Atividade</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form>
+                    <input type="text" class="form-control" placeholder="filtrar" ng-model="filtrar" ng-model-options="{debounce:500}">
+                </form>
+            </div>
+        </div>
+        <meu-painel ng-repeat="foto in fotos | filter: filtrar" class="col-md-2 painel-animado" titulo="{{foto.titulo}}">
+            
+            <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}" />
+              
+        </meu-painel>
+    
+    </div>
+
+</body>
+</html>
